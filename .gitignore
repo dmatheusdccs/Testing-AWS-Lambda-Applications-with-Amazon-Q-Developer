@@ -1,0 +1,20 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+
+# AWS SAM build artifacts
+.aws-sam/
+
+# pytest cache
+.pytest_cache/
+
+# Local project-specific folders to exclude
+hello_world/
+Otros/
+
+# Docs (exclude only guia.md, keep other docs if any)
+docs/guia.md
