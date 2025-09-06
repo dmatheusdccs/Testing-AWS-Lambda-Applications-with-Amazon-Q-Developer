@@ -88,7 +88,7 @@ project/
 
 ## Sample Fixture and Data
 
-
+```python
 import os
 import pytest
 from datetime import datetime
@@ -114,7 +114,7 @@ job_posting = JobPosting(
 
 ## Using Moto to Mock DynamoDB
 
-
+```python
 from moto import mock_dynamodb2
 import boto3
 from src.save_to_dynamodb import save_to_dynamodb_table
