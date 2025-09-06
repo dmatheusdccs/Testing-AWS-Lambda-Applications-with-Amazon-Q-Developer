@@ -26,13 +26,13 @@ This project demonstrates a professional approach to testing AWS Lambda function
 
 In this project, we:
 
-1. Implemented `save_to_dynamodb_table` to save `JobPosting` objects to DynamoDB.  
+1. Implemented "save_to_dynamodb_table" to store "JobPosting" objects to DynamoDB.  
 2. Created **sample data** and **fixtures** for testing.  
 3. Used **Moto** to mock DynamoDB (no real AWS resources are affected).  
 4. Refactored tests to be **descriptive, independent, and maintainable**.  
 5. Leveraged **Amazon Q Developer** to identify test scenarios, generate tests, and improve code quality.
 
-Reference: [AWS DevOps & Developer Productivity Blog — Testing your applications with Amazon Q Developer, 29 JUL 2024](https://aws.amazon.com/blogs/devops/testing-your-applications-with-amazon-q-developer/)
+Reference: [AWS DevOps & Developer Productivity Blog — “Testing your applications with Amazon Q Developer,” July 29, 2024”](https://aws.amazon.com/blogs/devops/testing-your-applications-with-amazon-q-developer/)
 
 ---
 
@@ -40,11 +40,11 @@ Reference: [AWS DevOps & Developer Productivity Blog — Testing your applicatio
 
 project/
 ├─ src/
-│ ├─ models.py
-│ ├─ save_to_dynamodb.py
+│ 	├─ models.py
+│ 	├─ save_to_dynamodb.py
 ├─ tests/
-│ ├─ conftest.py
-│ ├─ test_save_to_dynamodb.py
+│ 	├─ conftest.py
+│ 	├─ test_save_to_dynamodb.py
 ├─ README.md
 
 
@@ -134,7 +134,7 @@ def test_save_to_dynamodb_table(mock_table_name):
     item = table.get_item(Key={"id": job_posting.id})["Item"]
     assert item["title"] == job_posting.title
 
-Note: All tests run against a mocked DynamoDB. No real AWS resources are affected.
+> **Note:** All tests run against a mocked DynamoDB. No real AWS resources are affected.
 
 
 ## Benefits of Amazon Q Developer
@@ -175,4 +175,4 @@ Note: All tests run against a mocked DynamoDB. No real AWS resources are affecte
    - Descriptive, maintainable, and independent tests.
    - Full integration with Amazon Q Developer to accelerate and improve test writing.
 
-It’s ready to be extended for additional features or serve as an educational example for testing AWS Lambda functions.
+It is ready to be extended with additional features or serve as an educational example for testing AWS Lambda functions.
