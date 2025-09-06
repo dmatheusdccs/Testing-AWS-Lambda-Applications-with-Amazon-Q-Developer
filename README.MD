@@ -62,28 +62,33 @@ project/
 
 1. Clone the repository:
 
+   ```bash
    git clone <your-repo-url>
    cd <project-folder>
-
+   ```
 2. Install dependencies:
 
+   ```bash	
    pip install -r requirements.txt
-
+   ```
 
 3. Running Tests
 
-   Run all tests:
+      Run all tests:
 
+   ```bash
 	pytest -q
-
+   ```
 4. Run a specific test file:
 
+   ```bash
    pytest -q tests/test_save_to_dynamodb.py
-
+   ```
 5. Generate coverage report:
 
+   ```bash
    pytest --cov=src tests/
-
+   ```
 
 
 ## Sample Fixture and Data
@@ -100,6 +105,7 @@ def mock_table_name():
     yield
     del os.environ["TABLE_NAME"]
 
+
 job_posting = JobPosting(
     id="123e4567-e89b-12d3-a456-426655440000",
     title="Software Engineer",
@@ -110,7 +116,7 @@ job_posting = JobPosting(
     employment_type=EmploymentType.FULL_TIME,
     application_deadline=datetime(2023, 1, 15)
 )
-
+```
 
 ## Using Moto to Mock DynamoDB
 
@@ -128,11 +134,12 @@ def test_save_to_dynamodb_table(mock_table_name):
         AttributeDefinitions=[{"AttributeName": "id", "AttributeType": "S"}],
         ProvisionedThroughput={"ReadCapacityUnits": 5, "WriteCapacityUnits": 5},
     )
-    
+  
     save_to_dynamodb_table(job_posting)
-    
     item = table.get_item(Key={"id": job_posting.id})["Item"]
     assert item["title"] == job_posting.title
+
+	```
 
 > **Note:** All tests run against a mocked DynamoDB. No real AWS resources are affected.
 
