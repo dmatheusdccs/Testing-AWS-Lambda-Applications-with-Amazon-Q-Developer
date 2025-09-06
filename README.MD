@@ -140,6 +140,7 @@ def test_save_to_dynamodb_table(mock_table_name):
     assert item["title"] == job_posting.title
 
 	```
+```
 
 > **Note:** All tests run against a mocked DynamoDB. No real AWS resources are affected.
 
