@@ -19,5 +19,5 @@ Otros/
 # Docs (exclude only guia.md, keep other docs if any)
 docs/guia.md
 
-.~lock.*
+*.~lock.
 
