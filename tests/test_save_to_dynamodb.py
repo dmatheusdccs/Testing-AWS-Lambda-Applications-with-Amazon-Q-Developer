@@ -56,6 +56,6 @@ def test_save_to_dynamodb_table(mock_table_name):
     assert item["location"] == "Remote"
     assert item["company"] == "Acme Corp"
 
-    # Dependiendo de cómo serialice EmploymentType:
+    # Dependiendo de cómo se realize EmploymentType:
     # puede ser "Full Time" o EmploymentType.FULL_TIME.value
     assert item["employment_type"] in ["Full Time", EmploymentType.FULL_TIME.value]
